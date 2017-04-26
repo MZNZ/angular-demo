@@ -1,0 +1,33 @@
+<div ng-show="post.isLoad">
+  <div class="post">
+    <h1 class="title-domain-inline">{{post.post.title}}</h1>
+    <p class="title-domain-inline small-grey">{{post.post.domain}}</p>
+    <div class="post-body">
+      <span class="small-grey">Created on {{post.post.created + '000' | date: 'medium'}}</span> by <strong>{{post.post.author}}</strong>
+    </div>
+    <div class="post-body" ng-bind-html="post.post.selftext_html | decodeString">
+    </div>
+  </div>
+
+  <div class="sorting">
+    <p>{{post.post.num_comments}} Comment</p>
+    Sorted by:
+      <select
+        ng-options="item.value as item.name for item in post.selections"
+        ng-model="post.sortBy"
+        ng-change="post.sortItemChange(post.sortBy)">
+      </select>
+  </div>
+
+  <div class="comments" ng-repeat="comment in post.comments | orderBy:post.sortBy:true">
+    <div class="comment">
+      <strong>{{comment.data.author}}</strong>  {{comment.data.score}} point  <span class="small-grey">{{comment.data.created + '000' | date: 'medium'}}</span>
+      <div>
+        <p ng-bind-html="comment.data.body_html | decodeString"></p>
+        <sub-comment ng-show="comment.data.replies" comments="comment.data.replies.data.children"></sub-comment>
+      </div>
+    </div>
+  </div>
+
+  <sub-comment ng-show="post.comment.data.replies" comments="comment.data.replies.data.children"></sub-comment>
+</div>

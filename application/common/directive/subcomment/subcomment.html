@@ -1,0 +1,7 @@
+<div class="replies" ng-repeat="comment in comments">
+  <strong>{{comment.data.author}}</strong>  {{comment.data.score}} point  <span class="small-grey">{{comment.data.created + '000' | date: 'medium'}}</span>
+  <div class="reply">
+    <p ng-bind-html="comment.data.body_html | decodeString"></p>
+    <sub-comment ng-show="comment.data.replies" comments="comment.data.replies.data.children"></sub-comment>
+  </div>
+</div>

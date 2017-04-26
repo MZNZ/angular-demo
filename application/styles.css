@@ -1,0 +1,30 @@
+a {
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.small-grey {
+  font-size: small;
+  color: grey;
+}
+
+.title-domain-inline {
+  display: inline;
+}
+
+.comments, .post, .posts, .replies {
+  margin: 10px 5px 10px 5px;
+  padding: 5px 5px 5px 5px;
+  background-color: #E5E5E5;
+}
+
+.md p a, .md ul li a {
+  font-size: 17px;
+}
+
+.comment, .post-summary, .reply {
+  border-radius: 2px;
+  background-color: #E5E5E5;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}

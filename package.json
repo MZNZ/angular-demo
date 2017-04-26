@@ -1,0 +1,15 @@
+{
+  "name": "mollyRedditPost",
+  "description": "package.json",
+  "license": "",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}

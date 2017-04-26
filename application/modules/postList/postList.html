@@ -1,0 +1,8 @@
+<h1>Posts List</h1>
+<div class="posts" ng-show="postList.isLoad">
+  <div class="post-summary" ng-repeat="post in postList.data">
+    <a class="title-domain-inline" ui-sref="post({postId:post.data.id})">{{post.data.title}}</a>
+    <p class="small-grey title-domain-inline">{{post.data.domain}}</p>
+    <div>{{post.data.num_comments}} comment</div>
+  </div>
+</div>
